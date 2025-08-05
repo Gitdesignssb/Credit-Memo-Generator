@@ -18,3 +18,5 @@ with open(output_path, "rb") as file:
         file_name=f"{company_name}_Credit_Memo.docx",
         mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
     )
+output_path = f"data/{company_name}_Credit_Memo.docx"
+
