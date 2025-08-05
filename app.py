@@ -11,3 +11,10 @@ uploaded_data = st.file_uploader("Upload Financial/Market Data", type=["txt", "c
 
 if st.button("Generate Credit Memo"):
     st.success("Credit memo generation initiated...")
+with open(output_path, "rb") as file:
+    st.download_button(
+        label="Download Credit Memo",
+        data=file,
+        file_name=f"{company_name}_Credit_Memo.docx",
+        mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    )
