@@ -15,6 +15,10 @@ uploaded_template = st.file_uploader("Upload Credit Memo Template (.docx)", type
 
 # Generate memo button
 if st.button("Generate Credit Memo") and uploaded_template is not None and company_name:
+    # Ensure directories exist
+    os.makedirs("templates", exist_ok=True)
+    os.makedirs("data", exist_ok=True)
+
     # Save uploaded template to a temporary path
     template_path = f"templates/{uploaded_template.name}"
     with open(template_path, "wb") as f:
